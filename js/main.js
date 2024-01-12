@@ -39,11 +39,11 @@ class Member {
 }
 
 const team = [
-    new Member('Aldo', 'Ya perdónenlo', 'aldo'),
-    new Member('Leo', 'El doctor', 'leo'),
-    new Member('Toño', 'Estético', 'tonio'),
-    new Member('Luis', 'Web dev', 'luis'),
-    new Member('Fer', 'Otra cosa dev', 'fer'),
+    new Member('Aldo', 'Siempre trae pre', 'aldo'),
+    new Member('Leo', 'El couch', 'leo'),
+    new Member('Toño', 'El estético', 'tonio'),
+    new Member('Luis', 'El web-dev', 'luis'),
+    new Member('Fer', 'El otra-cosa-dev', 'fer'),
 ]
 
 document.addEventListener('DOMContentLoaded', function () {
