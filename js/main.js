@@ -80,7 +80,7 @@ const team = [
     new Member('Leo', 'El couch', 'leo', []),
     new Member('Toño', 'El estético', 'tonio', []),
     new Member('Luis', 'El web-dev', 'luis', []),
-    new Member('Fer', 'El otra-cosa-dev', 'fer', ["vectores1"]),
+    new Member('Fer', 'El otra-cosa-dev', 'fer', ["vectores","votaciones"]),
 ]
 
 const fix_php = () => {
