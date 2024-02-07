@@ -1,4 +1,3 @@
-Yo OTRO 
 Yo PAN 
 Yo MC 
 Yo Morena 
@@ -15,6 +14,10 @@ Yo Morena
 Yo Morena 
 Yo PRI 
 Yo PRI 
-Yo OTRO 
 Yo PV 
+Yo PAN Aldo MC 
 Yo PAN 
+Yo MC 
+Yo NULO 
+Maria NULO 
+a NULO 

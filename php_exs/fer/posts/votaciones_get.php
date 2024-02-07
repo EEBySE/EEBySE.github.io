@@ -57,7 +57,7 @@
             "MC" => 0,
             "Morena" => 0,
             "PV" => 0,
-            "OTRO" => 0
+            "NULO" => 0
         );
 
         foreach ($votos as $voto) {
