@@ -66,7 +66,7 @@
                 <td><input type="radio" name="partido" id="partido" value="PRI" required> PRI</td>
                 <td><input type="radio" name="partido" id="partido" value="PV"> Partido <br> Verde</td>
                 <td><input type="radio" name="partido" id="partido" value="Morena"> Morena</td>
-                <td><input type="radio" name="partido" id="partido" value="OTRO"> Otro</td>
+                <td><input type="radio" name="partido" id="partido" value="NULO"> Anular voto</td>
             </tr>
             </table>
             <br>

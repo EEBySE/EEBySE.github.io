@@ -13,7 +13,12 @@
 function js_log(string $content){
     echo '<script>console.log(' . json_encode($content) . ');</script>';
 }
-
+function istg_this_is_not_a_php_default_function_i_made_it_myself_to_check_if_smth_is_in_array($array, $what) {
+    foreach($array as $item) {
+        if ($what == $item) return true;
+    }
+    return false;
+}
 
 /*crear un programa en PHP para realizar las operciones sobre conjuntos usando POO conjuntos
 -tamño del conjunto A
@@ -26,24 +31,24 @@ function js_log(string $content){
 $tamA = isset($_POST["conA"]) ? $_POST["conA"] : 0;
 $tamB = isset($_POST["conB"]) ? $_POST["conB"] : 0;
 class Conjunto {
-    private $tamaño;
-    private $elementos;
+    private $set_size;
+    private $set_items;
 
     public function __construct($tam) {
-        $this->tamaño = $tam;
-        $this->elementos = array(); 
+        $this->set_items = array();
+        $this->set_size = $tam;
     }
 
-    public function llenarConjunto() {
-        for ($i = 0; $i < $this->tamaño; $i++) {
-            $this->elementos[] = rand(1, 20);
+    public function fillSet() {
+        for ($i = 0; $i < $this->set_size; $i++) {
+            $this->set_items[] = rand(1, 10);
         }
-        $this->elementos = array_unique($this->elementos);
+        //$this->set_items = array_unique($this->set_items);
     }
 
-    public function mostrarConjunto() {
+    public function showSet() {
         $result = "";
-        foreach ($this->elementos as $elemento) {
+        foreach ($this->set_items as $elemento) {
             $result .= $elemento . "  ";
         }
         return $result;
@@ -51,26 +56,35 @@ class Conjunto {
 
     public function union($conjuntoB) {
         $nuevoConjunto = new Conjunto(0);
-        $nuevoConjunto->elementos = array_merge($this->elementos, $conjuntoB->elementos);
-        $nuevoConjunto->elementos = array_unique($nuevoConjunto->elementos);
+        foreach($this->set_items as $item) {
+            if(!istg_this_is_not_a_php_default_function_i_made_it_myself_to_check_if_smth_is_in_array($nuevoConjunto->set_items, $item))
+                array_push($nuevoConjunto->set_items, $item);
+        }
+        foreach($conjuntoB->set_items as $item) {
+            if(!istg_this_is_not_a_php_default_function_i_made_it_myself_to_check_if_smth_is_in_array($nuevoConjunto->set_items, $item))
+                array_push($nuevoConjunto->set_items, $item);
+        }
+        // $nuevoConjunto->set_items = array_merge($this->set_items, $conjuntoB->set_items);
+        // $nuevoConjunto->set_items = array_unique($nuevoConjunto->set_items);
         return $nuevoConjunto;
     }
 
-    public function interseccion($conjuntoB) {
+    public function inter($conjuntoB) {
         $nuevoConjunto = new Conjunto(0);
-        foreach ($this->elementos as $elementoA) {
-            if (in_array($elementoA, $conjuntoB->elementos)) {
-                $nuevoConjunto->elementos[] = $elementoA;
+        foreach ($this->set_items as $elementoA) {
+            if (istg_this_is_not_a_php_default_function_i_made_it_myself_to_check_if_smth_is_in_array($conjuntoB->set_items, $elementoA)
+            && !istg_this_is_not_a_php_default_function_i_made_it_myself_to_check_if_smth_is_in_array($nuevoConjunto->set_items, $elementoA)) {
+                $nuevoConjunto->set_items[] = $elementoA;
             }
         }
         return $nuevoConjunto;
     }
 
-    public function diferencia($conjuntoB) {
+    public function team_diff($conjuntoB) {
         $nuevoConjunto = new Conjunto(0);
-        foreach ($this->elementos as $elementoA) {
-            if (!in_array($elementoA, $conjuntoB->elementos)) {
-                $nuevoConjunto->elementos[] = $elementoA;
+        foreach ($this->set_items as $elementoA) {
+            if (!istg_this_is_not_a_php_default_function_i_made_it_myself_to_check_if_smth_is_in_array($conjuntoB->set_items, $elementoA)) {
+                $nuevoConjunto->set_items[] = $elementoA;
             }
         }
         return $nuevoConjunto;
@@ -79,12 +93,12 @@ class Conjunto {
 $A = new Conjunto($tamA);
 $B = new Conjunto($tamB);
 
-$A->llenarConjunto();
-$B->llenarConjunto();
+$A->fillSet();
+$B->fillSet();
 $union = $A->union($B);
-$interseccion = $A->interseccion($B);
-$diferenciaAB = $A->diferencia($B);
-$diferenciaBA = $B->diferencia($A);
+$interseccion = $A->inter($B);
+$diferenciaAB = $A->team_diff($B);
+$diferenciaBA = $B->team_diff($A);
 ?>
 
 <article class="Venn2">
@@ -93,7 +107,7 @@ $diferenciaBA = $B->diferencia($A);
 			<span></span>
 			<h3>Conjunto A</h3>
 			<p>
-                <?=$A->mostrarConjunto();?>
+                <?=$A->showSet();?>
 			</p>
 		</div>
 </article>
@@ -103,7 +117,7 @@ $diferenciaBA = $B->diferencia($A);
 			<span></span>
 			<h3>Conjunto B</h3>
 			<p>
-                <?=$B->mostrarConjunto();?>
+                <?=$B->showSet();?>
 			</p>
 		</div>
 </article>
@@ -113,7 +127,7 @@ $diferenciaBA = $B->diferencia($A);
 			<span></span>
 			<h3>Conjunto A+B</h3>
 			<p>
-                <?=$union->mostrarConjunto();?>
+                <?=$union->showSet();?>
 			</p>
 		</div>
 </article>
@@ -123,7 +137,7 @@ $diferenciaBA = $B->diferencia($A);
 			<span></span>
 			<h3>Conjunto A</h3>
 			<p>
-                <?=$diferenciaAB->mostrarConjunto()?>
+                <?=$diferenciaAB->showSet()?>
 			</p>
 		</div>
 		<div class="circle two">
@@ -131,7 +145,7 @@ $diferenciaBA = $B->diferencia($A);
 			<span></span>
 			<h3>Conjunto B</h3>
 			<p>
-                <?=$diferenciaBA->mostrarConjunto()?>
+                <?=$diferenciaBA->showSet()?>
 			</p>
 		</div>
 		<div class="shape onetwo">
@@ -147,7 +161,7 @@ $diferenciaBA = $B->diferencia($A);
             </br>
 			<h3>A+B</h3>
 			<p>
-                <?=$interseccion->mostrarConjunto();?>
+                <?=$interseccion->showSet();?>
 			</p>
 		</div>
 	</article>
@@ -155,12 +169,12 @@ $diferenciaBA = $B->diferencia($A);
 
 <?php
 
-js_log("Conjunto A: \n" . $A->mostrarConjunto());
-js_log("Conjunto B: \n" . $B->mostrarConjunto());
-js_log("Unión: \n" . $union->mostrarConjunto());
-js_log("Diferencia A - B: \n" . $diferenciaAB->mostrarConjunto());
-js_log("Intersección: \n" . $interseccion->mostrarConjunto());
-js_log("Diferencia B - A: \n" . $diferenciaBA->mostrarConjunto());
+js_log("Conjunto A: \n" . $A->showSet());
+js_log("Conjunto B: \n" . $B->showSet());
+js_log("Unión: \n" . $union->showSet());
+js_log("Diferencia A - B: \n" . $diferenciaAB->showSet());
+js_log("Intersección: \n" . $interseccion->showSet());
+js_log("Diferencia B - A: \n" . $diferenciaBA->showSet());
 
 ?>
 

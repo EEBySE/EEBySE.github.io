@@ -12,13 +12,13 @@
     <form action="posts/conjuntos.php" method="post">
     <div>
         <label for="conA">Cantidad de elementos en el conjunto A: </label>
-        <input type="number" min="1" max="10" value="5" name="conA" id="conA" required>
+        <input type="number" min="1" max="100" value="5" name="conA" id="conA" required>
     <br>
     <br>
     </div>
     <div>
         <label for="conB">Cantidad de elementos en el conjunto B: </label>
-        <input type="number" min="1" max="10" value="5" name="conB" id="conB" required>
+        <input type="number" min="1" max="100" value="5" name="conB" id="conB" required>
         <br>
         <br>
     </div>  
