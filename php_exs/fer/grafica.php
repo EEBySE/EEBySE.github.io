@@ -22,7 +22,7 @@
 	$chart->getPlot()->setGraphPadding(new Padding(5, 30, 20, 140));
 
 	$chart->setTitle("Estadísticas de películas");
-	$chart_location = str_replace("\\","/",getcwd())."/utils/graph/generated/demo2.png";
+	$chart_location = str_replace("\\","/",getcwd())."/media/graphs/movie_stats.png";
 	$chart->render($chart_location);
 ?>
 <html>
@@ -31,6 +31,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
 </head>
 <body>
-	<img alt="Horizontal bars chart"  src="./utils/graph/generated/demo2.png" style="border: 1px solid gray;"/>
+	<img alt="Horizontal bars chart"  src="./media/graphs/movie_stats.png" style="border: 1px solid gray;"/>
 </body>
 </html>
