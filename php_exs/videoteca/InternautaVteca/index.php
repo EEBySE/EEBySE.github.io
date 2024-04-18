@@ -16,7 +16,7 @@ session_start(); ?>
     </div>
     <div id="menu">
       <ul>
-        <li id="current"><a href="index.html">inicio</a></li>
+        <li id="current"><a href="index.php">inicio</a></li>
         <li><a href="consultaInter.php">Consultas</a></li>
         <li><a href="registro.php">Registro</a></li>
         <li><a href="acceso.php">Acceso</a></li>

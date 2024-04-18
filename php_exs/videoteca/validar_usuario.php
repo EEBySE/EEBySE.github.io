@@ -14,7 +14,7 @@ if ($row = mysqli_fetch_array($result)) {
          $_SESSION["message"] = 'Bienvenid@ ' . $_SESSION['k_username'] . ', te has logueado correctamente!' .
             "<script>
                setTimeout(function() {
-                  window.location.href = '../ClienteVteca/index.html';
+                  window.location.href = '../ClienteVteca/index.php';
                }, 3000);
             </script>";
       }
@@ -22,7 +22,7 @@ if ($row = mysqli_fetch_array($result)) {
          $_SESSION["message"] = 'Bienvenid@ ' . $_SESSION['k_username'] . ', te has logueado correctamente!' .
             "<script>
                setTimeout(function() {
-                  window.location.href = '../AdmVteca/index.html';
+                  window.location.href = '../AdmVteca/index.php';
                }, 3000);
             </script>";
       }

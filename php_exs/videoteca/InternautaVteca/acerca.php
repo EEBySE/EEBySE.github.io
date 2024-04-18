@@ -19,7 +19,7 @@
   </div>
   <div  id="menu">
     <ul>
-      <li><a href="index.html">inicio</a></li>
+      <li><a href="index.php">inicio</a></li>
       <li><a href="consultaInter.php">Consultas</a></li>
       <li><a href="registro.php">Registro</a></li>
       <li><a href="acceso.php">Acceso</a></li>
