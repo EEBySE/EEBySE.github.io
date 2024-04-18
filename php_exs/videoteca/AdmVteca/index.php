@@ -1,9 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>videoteca</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="../images/Refresh.css" type="text/css" /></head>
+<?php include_once("../includes/header.php");
+session_start(); ?>
+
 <body>
 <div id="wrap">
   <div id="header">
@@ -20,10 +17,10 @@
   <div  id="menu">
     <ul>
       <li id="current"><a href="index.html">inicio</a></li>
-      <li><a href="consultaInter.php">Consultas</a></li>
-      <li><a href="registro.php">Registro</a></li>
-      <li><a href="acceso.php">Acceso</a></li>
-      <li><a href="acerca.php">Acerca de</a></li>
+      <li><a href="ConsultaAdm.php">Consultas</a></li>
+      <li><a href="crud.php">CRUD</a></li>
+      <li><a href="reportes.php">Reportes</a></li>
+      <li><a href="salir.php">Salir</a></li>
     </ul>
   </div>
   <div id="content-wrap">
@@ -40,7 +37,7 @@
       </div>
       </div>
     <div id="main">
-      <h1>Bienvenidos a la Videoteca </h1>
+      <h1>Inicio Videoteca </h1>
       <p><strong>Aqui encontraras los titulos de las peliculas de mayor exito a nivel nacional </strong></p>
       <p>Te invitamos a que te suscribas </p>
       <p>&nbsp;</p>
@@ -55,5 +52,4 @@
     <p>Página CSS descargada de https://www.free-css.com/</p>
   </div>
 </div>
-</body>
-</html>
+  <?php include_once("../includes/footer.php"); ?>
