@@ -3,7 +3,7 @@
 <head>
 <title>videoteca</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="images/Refresh.css" type="text/css" /></head>
+<link rel="stylesheet" href="../images/Refresh.css" type="text/css" /></head>
 <body>
 <div id="wrap">
   <div id="header">
@@ -52,7 +52,7 @@
     </div>
   </div>
   <div id="footer">
-    <p>P&agrave;gina CSS descargada de https://www.free-css.com/</p>
+    <p>Página CSS descargada de https://www.free-css.com/</p>
   </div>
 </div>
 </body>
